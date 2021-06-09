@@ -8,38 +8,22 @@ const ListTask = () => {
     const [status, setStatus] = useState("")
     return (
         <div>
-            
-                {status === "all"
+                {status === "map"
                     ? listtask.map((el) => (
                     <Task 
                         key={el.id}
                         description={el.description}
                         id={el.id}
-                        isdone={el.isdone}
+                        
                     />
-                    
                         )
                             )   
-                : status === "done"
-                    ? listtask
-                        .filter((el) => el.isdone)
-                        .map((el) => (
-                            <Task
-                                key={el.id}
-                                description={el.description}
-                                id={el.id}
-                                isdone={el.isdone}
-                            />
-                                )
-                                    )
                     : listtask
-                        .filter((el) => !el.isdone)
                         .map((el) => (
                             <Task
                                 key={el.id}
                                 description={el.description}
                                 id={el.id}
-                                isDone={el.isdone}
                             /> 
                                 )    
                                     )                

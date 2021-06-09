@@ -1,25 +1,26 @@
 import React, { useState } from 'react'
 import {useDispatch} from 'react-redux'
-import {deleteTask , doneTask , editTask} from '../Redux/Action/action'
+import {deleteTask , editTask} from '../Redux/Action/action'
 
-const Task = ({description , id , isdone}) => {
+const Task = ({description , id}) => {
 
     const dispatch= useDispatch()
     const [edit, setEdit] = useState(false);
     const [edit_description, setEdit_description] = useState("");
     
     return (
-        <div className="task">
+        <div className="task" style={{marginLeft:'20px', marginTop:'20px',}}>
         
         {!edit ? (
             <textarea
+            rows="1"
+            cols="40"
             value={description}
             readOnly={true}
             ></textarea>
         ) : (
             
             <input
-            className="description"
             defaultValue={description}
             type="text"
             onChange={(e) => {
@@ -27,8 +28,11 @@ const Task = ({description , id , isdone}) => {
             }}
             autoFocus
             />
+            
         )}
+        <div style={{marginLeft:'200px'}}>
             <button
+            style={{background:'blue',fontSize:'20px'}}
             onClick={() => {
             if (!edit) {
                 setEdit(!edit);
@@ -47,10 +51,8 @@ const Task = ({description , id , isdone}) => {
         >
             Edit
         </button>
-        <button onClick={() => dispatch(deleteTask(id))}>DELETE</button>
-        <button onClick={() => dispatch(doneTask(id))}>
-            {isdone ? "Undone" : "Done" }
-        </button>
+        <button style={{background:'red',fontSize:'20px',color:'white'}} onClick={() => dispatch(deleteTask(id))}>DELETE</button>
+        </div>
         </div>
     )
 }

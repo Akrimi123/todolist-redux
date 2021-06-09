@@ -7,9 +7,10 @@ const AddTask = () => {
     const dispatch = useDispatch();
     const [TaskTask, setTaskTask] = useState("");
     return (
-        <div>
-            <input onChange={(e) => setTaskTask(e.target.value)} value={TaskTask} />
+        <div style={{textAlign:'center' , marginTop:'80px'}}>
+            <input style={{background:'aqua'}} onChange={(e) => setTaskTask(e.target.value)} value={TaskTask} />
             <button
+            style={{background:'#16c08d'}}
                 onClick={() => {
                 if (TaskTask) {
                     dispatch(
@@ -21,7 +22,7 @@ const AddTask = () => {
                     );
                     setTaskTask("");
                 } else {
-                    alert("Entry your task !!");
+                    alert("OOooppss.....Entry your task please");
                 }
                 }}
             >

@@ -2,23 +2,23 @@ const initialState = {
     ListTask:[
         {
             id: 1 ,
-            description:"WakeUp"
+            description:"WakeUp" ,
         },
         {
             id: 2,
-            description:"Take your Break Fast"
+            description:"Take your Break Fast" ,
         },
         {
             id: 3 ,
-            description:"Do Yoga Exercices"
+            description:"Do Yoga Exercices" ,
         },
         {
             id: 4 ,
-            description:"Read Book"
+            description:"Read Book" ,
         },
         {
             id: 5 ,
-            description:"No instagram"
+            description:"No instagram" ,
         },
     ],
 };

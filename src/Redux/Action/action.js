@@ -17,10 +17,10 @@
     
     // DONE Task
     
-    export const doneTask = (payload) => {
+    export const doneTask = (id) => {
         return {
         type: "DONE",
-        payload,
+        payload:id,
         };
     };
     
