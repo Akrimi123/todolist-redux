@@ -5,28 +5,24 @@ import { addTask } from '../Redux/Action/action'
 
 const AddTask = () => {
     const dispatch = useDispatch();
-    const [TaskTask, setTaskTask] = useState("");
+    const [newtask, setNewtask] = useState("");
     return (
         <div style={{textAlign:'center' , marginTop:'80px'}}>
-            <input style={{background:'aqua'}} onChange={(e) => setTaskTask(e.target.value)} value={TaskTask} />
+            <input style={{background:'transparent',height:'25px',width:'350px',borderRadius:'30px',textAlign:'center'}} onChange={(e) => setNewtask(e.target.value)} value={newtask} />
             <button
-            style={{background:'#16c08d'}}
+            style={{background:'rgb(200, 115, 100)',display:'flex',marginLeft:'610px',marginTop:'15px',height:'32px',width:'150px',borderRadius:'30px',justifyContent:'center',color:'white',fontSize:'22px'}}
                 onClick={() => {
-                if (TaskTask) {
                     dispatch(
                     addTask({
                         id: Math.random(),
-                        description: TaskTask,
-                        isDone: false,
+                        description: newtask,
                     })
                     );
-                    setTaskTask("");
-                } else {
-                    alert("OOooppss.....Entry your task please");
+                    setNewtask("");
                 }
-                }}
+            }
             >
-                ADD
+                Add Task
             </button>
         </div>
     )
